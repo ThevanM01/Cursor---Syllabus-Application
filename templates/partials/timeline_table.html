@@ -1,0 +1,37 @@
+<div class="timeline-table-container">
+    <table class="timeline-table">
+        <thead>
+            <tr id="timeline-header">
+                <th draggable="true">
+                    <div class="column-header">
+                        Week
+                        <span class="delete-column" onclick="removeColumn(this)">⛔</span>
+                    </div>
+                </th>
+                <th draggable="true">
+                    <div class="column-header">
+                        Deliverables
+                        <span class="delete-column" onclick="removeColumn(this)">⛔</span>
+                    </div>
+                </th>
+                <th draggable="true">
+                    <div class="column-header">
+                        Due Date
+                        <span class="delete-column" onclick="removeColumn(this)">⛔</span>
+                    </div>
+                </th>
+                <th class="action-column"></th>
+            </tr>
+        </thead>
+        <tbody id="timeline-body">
+            <tr>
+                <td><input type="text" name="timeline[0][week]"></td>
+                <td><input type="text" name="timeline[0][deliverables]"></td>
+                <td><input type="text" name="timeline[0][due date]"></td>
+                <td>
+                    <button type="button" class="delete-row" onclick="this.closest('tr').remove()">🗑️</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div> 

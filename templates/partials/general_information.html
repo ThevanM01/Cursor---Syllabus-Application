@@ -1,0 +1,29 @@
+<div id="general-information" class="form-section">
+    <h3 class="form-section-title">General Information</h3>
+    {% for field in general_fields %}
+    <div class="form-row">
+        {% for column in field.columns %}
+        {% if not column.hidden %}
+        <div class="form-column">
+            <div class="form-group">
+                <label for="{{ column.id }}">{{ column.label }}:</label>
+                <{% if column.type == 'select' %}select{% else %}input type="{{ column.type }}"{% endif %} 
+                    id="{{ column.id }}" 
+                    name="{{ column.id }}"
+                    {% if column.required %}required{% endif %}
+                    {% if column.min is defined %}min="{{ column.min }}"{% endif %}
+                    {% if column.max is defined %}max="{{ column.max }}"{% endif %}
+                    {% if column.step is defined %}step="{{ column.step }}"{% endif %}>
+                    {% if column.type == 'select' %}
+                        {% for option in column.options %}
+                        <option value="{{ option }}">{{ option }}</option>
+                        {% endfor %}
+                    {% endif %}
+                </{% if column.type == 'select' %}select{% else %}input{% endif %}>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+</div> 

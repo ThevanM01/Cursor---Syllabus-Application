@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Telfer Course Automation Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body class="landing-page">
+    <div class="banner-centered">
+        <h1>Telfer Course Automation Tool</h1>
+    </div>
+    <div class="content-wrapper">
+        <div class="role-buttons">
+            <a href="{{ url_for('admin_dashboard') }}" class="role-button admin">
+                <span class="role-icon">👑</span>
+                <span class="role-title">Administrator</span>
+                <span class="role-description">Manage system settings and users</span>
+            </a>
+            
+            <a href="{{ url_for('educator_dashboard') }}" class="role-button educator">
+                <span class="role-icon">👨‍🏫</span>
+                <span class="role-title">Educator</span>
+                <span class="role-description">Create and manage syllabi</span>
+            </a>
+            
+            <a href="{{ url_for('student_dashboard') }}" class="role-button student">
+                <span class="role-icon">👨‍🎓</span>
+                <span class="role-title">Student</span>
+                <span class="role-description">View and download syllabi</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html> 

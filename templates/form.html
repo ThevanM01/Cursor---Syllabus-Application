@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Course Syllabus Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="{{ url_for('static', filename='autofill.js') }}"></script>
+</head>
+<body class="form-page">
+    <div class="banner-centered">
+        <h1>Telfer Course Automation Tool</h1>
+        <a href="{{ url_for('landing') }}" class="back-button">← Back to Home</a>
+    </div>
+    
+    <div class="form-container">
+        <div class="form-header">
+            <h2 class="form-title">Course Syllabus Generator</h2>
+            <button type="button" onclick="autofillForm()" class="autofill-button">
+                Autofill Test Data
+            </button>
+        </div>
+        <form method="POST">
+            {% include 'partials/general_information.html' %}
+            
+            <div class="form-group">
+                <label for="course_description">Course Description:</label>
+                <textarea id="course_description" name="course_description" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="learning_outcomes">Learning Outcomes (one per line):</label>
+                <textarea id="learning_outcomes" name="learning_outcomes" required></textarea>
+            </div>
+            
+            {% include 'partials/timeline.html' %}
+            
+            <button type="submit">Generate Syllabus</button>
+        </form>
+    </div>
+    <script src="{{ url_for('static', filename='timeline.js') }}"></script>
+</body>
+</html> 
